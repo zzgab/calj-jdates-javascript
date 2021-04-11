@@ -4,27 +4,22 @@
  ***************************************
  * Jewish holidays and events          *
  ***************************************
- * History														 *
+ * History                             *
+ *  11/04/2021: v1.4.1:                *
+ *    - error on Yom HaShoah           *
  *  14/03/2005: v1.4: Holiday object,  *
- *		for Yom Tov support.
- *  13/12/2004: v1.31									 *
+ *		for Yom Tov support.           *
+ *  13/12/2004: v1.31                  *
  ***************************************
- * March 14, 2004 - AdarII 3, 5765     *
- *  v1.4                               *
+ * April 11, 2021 - Nissan 29, 5781    *
+ *  v1.4.1                             *
  *                                     *
  ***************************************
  * (c) Gabriel Zerbib,                 *
- *   gabriel@bumpt.net                 *
- *   http://www.bumpt.net              *
- *   http://www.calj.net               *
+ *   gabriel@calj.net                  *
+ *   https://calj.net                  *
  *                                     *
- * It is strictly forbidden to use or  *
- * reproduce all or parts of this      *
- * program without the author's        *
- * explicit permission.                *
- * Commercial use of this program is   *
- * subject to purchase. Please contact *
- * the author.                         *
+ * MIT License                         *
  ***************************************/
 
 function Holiday(nType, hStart, hEnd, nLength, arrYomTov)
@@ -189,10 +184,10 @@ HOLIDAYS.Pesach = function(HYear, bGalut)
 HOLIDAYS.YomHashoa = function(HYear)
 {
 	var h = new HDate(27, HDate.NISSAN, HYear);
-	if(h.getDayOfWeek() == HDate.SHABBAT)
+	if(h.getDayOfWeek() == HDate.SHISHI)
+		h.add(-1);
+    else if(h.getDayOfWeek() == HDate.RISHON)
 		h.add(1);
-	else if(h.getDayOfWeek() == HDate.SHISHI)
-		h.add(2);
 	return new Holiday(HOLIDAYS.YOM_HASHOA, h, h, 1);
 }
 
