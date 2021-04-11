@@ -15,7 +15,7 @@ The old algorithm that CalJ.net used when it was full Javascript (but it still w
   console.log(date);    // prints: "Wed Sep 19 2018 00:00:00"
 
   const israel = true;
-  const parasha = new GDate(23, 5, 2020).getParasha(true);
+  const parasha = new GDate(23, 5, 2020).getParasha(israel);
   console.log(parasha); // [33]
 </script>
 ~~~~
