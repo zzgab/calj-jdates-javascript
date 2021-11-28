@@ -20,3 +20,5 @@ The old algorithm that CalJ.net used when it was full Javascript (but it still w
 </script>
 ~~~~
 
+## Formulas
+https://www.calj.net/algorithme
